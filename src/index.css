@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #000000;
+  --color-surface: #0a0a0a;
+  --color-surface-2: #111111;
+  --color-primary: #f5f5f7;
+  --color-secondary: #86868b;
+  --color-muted: #555555;
+  --color-accent: #0071e3;
+  --color-accent-hover: #0077ed;
+  --color-link: #2997ff;
+}
+
+/* ─── Base Reset ─── */
+@layer base {
+  html {
+    background-color: #000;
+    color: #f5f5f7;
+    overflow-x: hidden;
+    /* scroll-behavior: smooth — intentionally omitted to avoid GSAP pin jank */
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Inter', -apple-system, 'SF Pro Display', 'Helvetica Neue',
+      system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    line-height: 1.5;
+  }
+
+  ::selection {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+  }
+
+  img {
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  /* Smooth section transitions — no large black gaps */
+  section {
+    position: relative;
+  }
+}
+
+/* ─── GPU-Accelerated Animation Helpers ─── */
+.gpu {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* ─── Scrollbar — ultra-slim ─── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ─── GSAP Pin Spacer Fix ─── */
+.pin-spacer {
+  padding: 0 !important;
+}
+
+/* ─── Utility: Gradient Text ─── */
+.text-gradient-silver {
+  background: linear-gradient(180deg, #f5f5f7 0%, #a1a1aa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+  padding-bottom: 0.1em;
+}
+
+.text-gradient-silver-h {
+  background: linear-gradient(90deg, #a1a1aa 0%, #f5f5f7 50%, #a1a1aa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+  padding-bottom: 0.1em;
+}
+
+/* ─── Glassmorphism Card Base ─── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 1.5rem;
+}
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+}
