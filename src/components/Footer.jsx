@@ -23,7 +23,6 @@ export default function Footer() {
             className="h-10 sm:h-12 w-auto object-contain opacity-90 -ml-1" 
           />
           <span className="text-[#555]">Vivobook 16X (K3605VC)</span>
-          <span className="text-[11px] text-[#444] mt-1">Product Portfolio Showcase</span>
         </div>
 
         <div className="flex gap-8">
@@ -54,7 +53,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/[0.04] max-w-6xl mx-auto px-6 py-5 flex flex-col md:flex-row justify-between items-center text-[12px] text-[#555] gap-3">
-        <span>&copy; {new Date().getFullYear()} ASUSTeK Computer Inc. All rights reserved.</span>
+        <span>&copy; {new Date().getFullYear()} Tycami Tech. All rights reserved.</span>
         <span>Indonesia</span>
       </div>
     </footer>
