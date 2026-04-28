@@ -33,7 +33,7 @@ function GalleryCard({ item, index }) {
           src={item.src}
           alt={item.alt}
           loading="lazy"
-          className="w-full h-full object-contain transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06]"
+          className="w-full h-full object-contain transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
         />
       </div>
 
@@ -56,8 +56,8 @@ export default function DesignGallery() {
 
   return (
     <section id="gallery" className="relative py-24 md:py-36 overflow-hidden bg-black">
-      {/* Ambient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[40vh] bg-blue-600/10 blur-[140px] rounded-full pointer-events-none" />
+      {/* Ambient glow (monochrome) */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[40vh] bg-white/5 blur-[140px] rounded-full pointer-events-none" />
 
       <div ref={headRef} className="max-w-[1400px] mx-auto px-6 mb-14 md:mb-20 text-center relative z-10">
         <motion.p

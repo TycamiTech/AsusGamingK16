@@ -46,7 +46,7 @@ export default function Connectivity() {
       className="relative py-24 md:py-36 overflow-hidden"
       style={{
         background:
-          'radial-gradient(ellipse 80% 50% at 50% 50%, rgba(15,15,20,1) 0%, #000 65%)',
+          'radial-gradient(ellipse 80% 50% at 50% 50%, rgba(20,20,22,1) 0%, #000 65%)',
       }}
     >
       <div ref={ref} className="max-w-[1200px] mx-auto px-6">
@@ -103,7 +103,7 @@ export default function Connectivity() {
                   delay: 0.15 + i * 0.06,
                   ease: EASE,
                 }}
-                className="glass-card p-6 flex flex-col items-center text-center transition-all duration-500 hover:bg-white/[0.05] rounded-[1.5rem] group"
+                className="glass-card p-6 flex flex-col items-center text-center transition-all duration-500 hover:bg-white/[0.05] hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(255,255,255,0.03)] rounded-[1.5rem] group"
                 style={{ willChange: 'transform, opacity' }}
               >
                 <div className="w-11 h-11 rounded-xl bg-white/[0.06] flex items-center justify-center mb-4 group-hover:bg-white/[0.1] transition-colors duration-300">

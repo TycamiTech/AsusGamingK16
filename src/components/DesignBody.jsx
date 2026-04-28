@@ -71,7 +71,7 @@ export default function DesignBody() {
           initial={{ opacity: 0, scale: 0.95, y: 60 }}
           animate={inView ? { opacity: 1, scale: 1, y: 0 } : {}}
           transition={{ duration: 1.4, delay: 0.2, ease: EASE }}
-          className="gpu relative w-full rounded-[2.5rem] overflow-hidden z-20 shadow-[0_30px_100px_rgba(0,100,255,0.12)] bg-[#050505] border border-white/[0.05]"
+          className="gpu relative w-full rounded-[2.5rem] overflow-hidden z-20 shadow-[0_30px_100px_rgba(255,255,255,0.03)] bg-[#050505] border border-white/[0.05]"
           style={{ willChange: 'transform, opacity' }}
         >
           {/* Padded container so the laptop body is fully visible */}
@@ -85,10 +85,10 @@ export default function DesignBody() {
           </div>
 
           {/* Overlay gradient for text readability and premium feel */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 md:via-black/20 md:to-transparent to-black/80 pointer-events-none" />
 
           {/* Floating stats */}
-          <div className="absolute bottom-0 left-0 right-0 p-8 md:p-14 flex flex-wrap gap-10 md:gap-16">
+          <div className="relative md:absolute bottom-0 left-0 right-0 p-6 sm:p-8 md:p-14 grid grid-cols-2 md:flex md:flex-wrap gap-6 md:gap-16 z-30">
             {[
               { value: '1.8 kg', label: 'Lightweight' },
               { value: '17.9 mm', label: 'Ultra-thin' },
@@ -101,7 +101,7 @@ export default function DesignBody() {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.6 + (i * 0.1), ease: EASE }}
               >
-                <p className="text-[clamp(1.8rem,4vw,48px)] font-semibold text-[#f5f5f7] tracking-tight leading-none mb-2">
+                <p className="text-[clamp(1.5rem,4vw,48px)] font-semibold text-[#f5f5f7] tracking-tight leading-none mb-2">
                   {stat.value}
                 </p>
                 <p className="text-[14px] text-[#86868b] font-medium tracking-wide uppercase">{stat.label}</p>

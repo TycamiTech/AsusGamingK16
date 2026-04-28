@@ -7,9 +7,9 @@
   --color-primary: #f5f5f7;
   --color-secondary: #86868b;
   --color-muted: #555555;
-  --color-accent: #0071e3;
-  --color-accent-hover: #0077ed;
-  --color-link: #2997ff;
+  --color-accent: #ffffff;
+  --color-accent-hover: #e0e0e0;
+  --color-link: #ffffff;
 }
 
 /* ─── Base Reset ─── */

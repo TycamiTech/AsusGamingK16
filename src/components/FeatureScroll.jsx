@@ -51,13 +51,14 @@ export default function FeatureScroll() {
           }
         );
 
-        // Image pop-in
+        // Image pop-in and subtle parallax
         const img = card.querySelector('.feature-img');
         gsap.fromTo(img,
-          { scale: 0.9, opacity: 0 },
+          { scale: 0.9, opacity: 0, y: 20 },
           {
             scale: 1,
             opacity: 1,
+            y: 0,
             duration: 1.2,
             delay: 0.2,
             ease: "power3.out",
@@ -67,6 +68,18 @@ export default function FeatureScroll() {
             }
           }
         );
+        
+        // Image subtle scroll parallax after appearing
+        gsap.to(img, {
+          y: -30,
+          ease: "none",
+          scrollTrigger: {
+            trigger: card,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          }
+        });
       });
     }, containerRef);
     return () => ctx.revert();
@@ -96,22 +109,22 @@ export default function FeatureScroll() {
                 className={`feature-card flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} bg-[#0a0a0c] rounded-[2.5rem] md:rounded-[3rem] border border-white/[0.05] overflow-hidden`}
               >
                 {/* Text Content */}
-                <div className="w-full lg:w-1/2 flex flex-col justify-center p-10 md:p-16 lg:p-24 z-10">
-                  <p className="text-[13px] font-bold tracking-[0.2em] uppercase text-[#0071e3] mb-5">
+                <div className="w-full lg:w-1/2 flex flex-col justify-center p-6 sm:p-10 md:p-16 lg:p-24 z-10">
+                  <p className="text-[12px] sm:text-[13px] font-bold tracking-[0.2em] uppercase text-[#a1a1aa] mb-4 sm:mb-5">
                     {feat.eyebrow}
                   </p>
-                  <h3 className="text-[clamp(2rem,3.5vw,48px)] font-semibold tracking-[-0.03em] leading-[1.15] text-[#f5f5f7] mb-6">
+                  <h3 className="text-[clamp(1.75rem,4vw,48px)] font-semibold tracking-[-0.03em] leading-[1.15] text-[#f5f5f7] mb-4 sm:mb-6">
                     {feat.title}
                   </h3>
-                  <p className="text-[18px] text-[#86868b] leading-[1.6]">
+                  <p className="text-[15px] sm:text-[18px] text-[#86868b] leading-[1.6]">
                     {feat.body}
                   </p>
                 </div>
 
                 {/* Image Content */}
-                <div className="w-full lg:w-1/2 relative min-h-[300px] md:min-h-[400px] lg:min-h-0 flex items-center justify-center p-10 lg:p-16 bg-gradient-to-br from-white/[0.02] to-transparent">
-                  {/* Subtle radial glow */}
-                  <div className="absolute inset-0 bg-[#0071e3]/10 opacity-50 blur-[100px] pointer-events-none mix-blend-screen" />
+                <div className="w-full lg:w-1/2 relative min-h-[250px] sm:min-h-[300px] md:min-h-[400px] lg:min-h-0 flex items-center justify-center p-6 sm:p-10 lg:p-16 bg-gradient-to-br from-white/[0.02] to-transparent">
+                  {/* Subtle radial glow (monochrome) */}
+                  <div className="absolute inset-0 bg-white/5 opacity-50 blur-[100px] pointer-events-none mix-blend-screen" />
                   
                   <img
                     src={feat.image}

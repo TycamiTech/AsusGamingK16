@@ -86,7 +86,7 @@ function SpecCard({ spec, index }) {
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, delay: index * 0.06, ease: EASE }}
-      className={`group relative overflow-hidden rounded-[1.8rem] border border-white/[0.06] hover:border-white/[0.12] transition-all duration-600 ${spec.span}`}
+      className={`group relative overflow-hidden rounded-[1.8rem] border border-white/[0.06] hover:border-white/[0.2] hover:-translate-y-1 transition-all duration-500 hover:shadow-[0_15px_40px_rgba(255,255,255,0.03)] ${spec.span}`}
       style={{
         background: '#0a0a0c',
         willChange: 'transform, opacity',
@@ -99,17 +99,17 @@ function SpecCard({ spec, index }) {
             <img
               src={spec.bgImage}
               alt={spec.label}
-              className="w-full h-full object-contain opacity-30 group-hover:opacity-40 group-hover:scale-[1.03] transition-all duration-1000 ease-out"
+              className="w-full h-full object-contain opacity-30 group-hover:opacity-40 group-hover:scale-[1.05] transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]"
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0c] via-[#0a0a0c]/70 to-[#0a0a0c]/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0c] via-[#0a0a0c]/80 to-[#0a0a0c]/20" />
         </>
       )}
 
       {/* Content */}
-      <div className="relative z-10 p-7 md:p-9 flex flex-col justify-end h-full min-h-[200px]">
+      <div className="relative z-10 p-5 md:p-9 flex flex-col justify-end h-full min-h-[180px] md:min-h-[200px]">
         {/* Label */}
-        <p className="text-[11px] font-medium tracking-[0.2em] uppercase text-[#555] mb-4">
+        <p className="text-[10px] md:text-[11px] font-medium tracking-[0.2em] uppercase text-[#555] mb-3 md:mb-4">
           {spec.label}
         </p>
 

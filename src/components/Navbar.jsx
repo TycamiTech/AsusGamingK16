@@ -63,7 +63,7 @@ export default function Navbar() {
         <a
           href="#specs"
           onClick={(e) => scrollTo(e, 'specs')}
-          className="text-[12px] font-medium text-[#2997ff] hover:text-[#40a9ff] transition-colors duration-200 flex items-center gap-1 group"
+          className="text-[12px] font-medium text-white hover:text-[#a1a1aa] transition-colors duration-200 flex items-center gap-1 group"
         >
           View Specs
           <ChevronDown size={14} className="group-hover:translate-y-0.5 transition-transform duration-200" />
